@@ -1,12 +1,22 @@
 plugins {
 	id 'java'
-	id 'org.springframework.boot' version '3.2.2'
-	id 'io.spring.dependency-management' version '1.1.4'
-	id 'org.graalvm.buildtools.native' version '0.9.28'
+	id 'application'
+	id 'org.javamodularity.moduleplugin' version '1.8.12'
+	id 'org.openjfx.javafxplugin' version '0.0.13'
+	id 'org.beryx.jlink' version '2.25.0'
 }
 
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
+
+application {
+	mainModule = 'com.example.multhithradingconcurencyparfomance.reentant_lock'
+	mainClass = 'com.example.multhithradingconcurencyparfomance.reentant_lock.App'
+}
+
+tasks.withType(JavaCompile) {
+	options.encoding = 'UTF-8'
+}
 
 java {
 	sourceCompatibility = '17'
@@ -14,6 +24,11 @@ java {
 
 repositories {
 	mavenCentral()
+}
+
+javafx {
+	version = '20-ea+4'
+	modules = ['javafx.controls', 'javafx.fxml']
 }
 
 dependencies {
