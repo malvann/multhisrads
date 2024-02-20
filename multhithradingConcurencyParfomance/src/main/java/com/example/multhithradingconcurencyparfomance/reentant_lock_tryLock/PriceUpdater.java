@@ -1,4 +1,4 @@
-package com.example.multhithradingconcurencyparfomance.reentant_lock;
+package com.example.multhithradingconcurencyparfomance.reentant_lock_tryLock;
 
 import com.example.multhithradingconcurencyparfomance.util.Sleeper;
 import lombok.RequiredArgsConstructor;

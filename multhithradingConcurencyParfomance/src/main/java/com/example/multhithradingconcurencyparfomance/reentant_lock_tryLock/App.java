@@ -1,4 +1,4 @@
-package com.example.multhithradingconcurencyparfomance.reentant_lock;
+package com.example.multhithradingconcurencyparfomance.reentant_lock_tryLock;
 
 import javafx.animation.Animation;
 import javafx.animation.AnimationTimer;
@@ -20,7 +20,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import static com.example.multhithradingconcurencyparfomance.reentant_lock.Currencies.fromName;
+import static com.example.multhithradingconcurencyparfomance.reentant_lock_tryLock.Currencies.fromName;
 
 public class App extends Application {
     public static void main(String[] args) {
