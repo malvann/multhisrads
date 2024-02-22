@@ -1,5 +1,7 @@
 package com.example.multhithradingconcurencyparfomance.ex;
 
+import com.example.multhithradingconcurencyparfomance.util.Node;
+
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.concurrent.locks.LockSupport;

@@ -1,6 +1,5 @@
 package com.example.multhithradingconcurencyparfomance.image_repaint_ex;
 
-import lombok.Cleanup;
 import lombok.extern.slf4j.Slf4j;
 
 import javax.imageio.ImageIO;
@@ -29,10 +28,11 @@ public class PictureRecolored {
         int width = originalImage.getWidth();
         int height = originalImage.getHeight() / threadsNum;
 
-        @Cleanup ExecutorService executorService = Executors.newFixedThreadPool(3);
-        IntStream.range(1, threadsNum)
-                .parallel()
-                .forEach(i -> executorService.submit(() -> colorBatch(originalImage, resultImage, 0, i * originalImage.getHeight() / threadsNum, width, height)));
+        try (ExecutorService executorService = Executors.newFixedThreadPool(3)) {
+            IntStream.range(1, threadsNum)
+                    .parallel()
+                    .forEach(i -> executorService.submit(() -> colorBatch(originalImage, resultImage, 0, i * originalImage.getHeight() / threadsNum, width, height)));
+        }
     }
 
     private void colorBatch(BufferedImage originalImage, BufferedImage resultImage, int leftCorner, int topCorner,

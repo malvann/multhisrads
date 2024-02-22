@@ -1,5 +1,6 @@
 package com.example.multhithradingconcurencyparfomance.ex;
 
+import com.example.multhithradingconcurencyparfomance.util.Node;
 import lombok.SneakyThrows;
 import org.junit.jupiter.api.Test;
 
